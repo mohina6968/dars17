@@ -1,0 +1,257 @@
+@font-face {
+    font-family: Arabic Cyr (kerning fixed) ;/*shrift nomi*/
+    src: url(https://fonts-online.ru/fonts/arabic-cyr-kerning-fixed)
+}  
+
+/*universal nomlanish
+Sahifadagi barcha elementlarga taluqli
+*/
+*{font-family: Times New Roman, serif ;}
+
+/*tegning nomi-bunda sahifadagi barcha shu nomdagi
+ teglar hosil qilingan elementlar ko'rsatilgan 
+ qoidalar boyicha jilolanadi.*/
+
+ div {color:aqua}
+
+ /*Teg id si-faqat shu identifikatorga
+ teng bo'lgan obyekt uchun*/
+
+ #mydiv{color:rgb(56, 235, 20);}
+
+ /*sinflash-malum nom bilan html 
+ teglarini sinflarga ajratish*/
+
+ .sinf{color:rgb(255, 0, 17);}
+
+ /*teglarni sinflash-agar ko'rsatilgan qoidalar
+  uchun faqat ma'lum teglar uchun tatbiq etilishi uchun*/
+  
+  .class1.class2. {color: orangered;}
+
+  /*Ichidagi teglar-malum teglarni boshqacha qoidalar asosida tuslash.
+  Yani bir tegning ichida joylashgan boshqa teglarni
+   tush uchun.*/
+
+   div p{color:fuchsia;}
+
+   /*Qo'shni teglar-aynan bir hil darajadagi chuqurlikda joylashgan 
+   bitta umumiy tashqi teg ichidagilar qo'shni teglar hisoblanadi
+   */
+
+   div + p {color:deepskyblue;}
+
+   /*Qardosh teglar-1-nomlanishdagi tegga nisbatan bir hil
+    chuqurlikda joylashgan va undan keyin kelgan
+    2-nomlanishga mos teglarning barchasi (~) belgilari qoyiladi belgisi"+"*/
+
+     div ~ b{color:darkred;}
+     /*Ichki teglar-nazarda tutilyotgan
+      tegning ichida joylashdi xolos.ko'zda tutilgan teg n-darajada 
+      unga ichki teg n+1 darajada bo'lishi shart">"*/
+
+      div > p{color:mediumblue;}
+
+      /*Alomatli - Teglarning alomatli va u qabul qilgan 
+      qiymatiga qarab jilolash uchun [] qavslardan foydalanamiz*/
+
+      p[align] {font-weight: bold;}
+
+
+      /*Qiymatlarning turlari
+      -inherit-qiymatni tashqi tegning ayni xususiyatidan oladi.
+      Agar tashqi tegga mos qiymat o'rnatilmagan bosa odatiy qiymat beriladi
+
+      -initial-asl qiymatini berish
+      -unset-inherit singari asli bo'lsa initialni  qabul qiladi
+      -all-ushbu uchala qiymatlardan birini qabul qiladi.
+      */
+
+      h3{all:unset;color:blue}
+
+      /* rgb (x,x,x)-x-0.255 oraliqdagi butun son yoki uning foiz ifodasi
+
+      rgba(x,x,x,a) - a-0..1 oraliqdagi shaffoflikni bildiruvchi
+
+      HSL-Hue-soya,Sature-qoramtir,Lightnees-yorqin )
+
+      hsl(s,n,l)h-0..359 oraliqdagi butun son, s vs 1-0%-100%
+      hsl(h,s,l,a)h-0..359;s,1-0%..100%;a-0..1.
+
+      kalit so'zlar;
+      -activeborder-faol oyna chegarasining rangi;
+      -activecaption-faol oyna sarlavhasining rangi;
+      -appworkspace-ko'p hujjatli oyna orttasviri;
+      -background-ishchi maydon orttasviri;
+      -buttonface-hajmli obyekt yuzasining rangi;
+      -buttonhighlight-hajmli obyektning to'yingan soyasi rangi;
+      */
+
+      /*21.02.2024*/
+
+      
+/* Funksiyalar, xiralshtirish, 
+yorqinlashtirish,soya qo`shish
+
+Funksiya-ma`lum ammallar, hisob-kitoblar bajarib, 
+qayta ishlash jarayonidan
+so`ng maxsus natija qaytaradigan 
+dasturning kichik bo`lagi.
+
+ 
+Obyektni akslantirish  malum funksiyalar yordamida o'zgartirish mumkin. Ular filtr xususiyatiga va maxsus nom qiymatlar bilan korsatila..Obyektni barcha elementlarni gaus usuli xiralashtiradi. Buning uchun blur funksiyasi qo'llaniladi.
+*/
+
+/* filter:blur(olcham); */
+
+.xira {
+    filter: blur(8px);
+}
+
+/*yorqinlashtirish-(brightness) - 1-100%.
+
+filter: brightness(70%);
+
+/*Xijillashtirish - Tasvirni yorqinlashtirishga qarama - qarshi amal xijillashtirishdir,
+ shuning uchun u ziddiyatlash ma'nosidagi <contrast> so'zi bilan nomlangan.
+ Sintaksisi va unga beriladigan qaymat aynan yorqinlashtirishniki singari*/
+
+  /*To'yintirish-Rasmdagi ranglarning bir-biriga yaqindan birlashtirish uchun saturate funksiyasi ishlatiladi.
+ Unga 0 qiymat berilsa, surat oq-qora ko'rinishiga kelib qoladi.  
+Bir qiymat beriganda esa o'zgarishsiz qoladi.
+ Unga qancha katta qiymat berilsa, shunca rasmdagi ranglar soni kamayib boradi. 
+
+filter: saturate(haqiqiy son); 
+
+ /*Tasvirlarning- shaffofligini ta'minlash uchun opasity funksiyasi ishlatiladi.
+ Shaffof obyekt o'z rangini yo'qotish bilan birga orqasidagi tasvirlarni
+  ko'rishga imkon yaratadi, ya'ni tiniq oyna (ko'zgu emas) tasavvurini beradi.Sintaksis:
+
+filter:opacity(foiz);
+
+/*Soya qo'shish - Tasvirlarni jilolashda ularning ko'rinishidagi ta'sirini oshirish uchun soya qo'shish ham muhim ahamiyatga ega bo'ladi.
+Bunda obyekt ,xususan ,rasm to'g'ri to'rtburchak shaklida qiyofaga ega bo'lishi shart emas,
+soya uning chegarasi bo'ylab joylashaveradi
+
+filter:drop-shadow(x,y,r,c);
+
+
+/*x - soyaning yotiq surilishi majburiy qiymat, y-soyaning tikkasiga surilishi, 
+r - soyaning suvash radiusi, c - soya rangi
+*/
+
+.soya {
+    filter:drop-shadow(3px 2px 6px red);
+}
+
+/* OQ - qora tasvir qilish 
+Monoxrom tusga kiritish grayscale funksiyasi orqali. 1-100% qiymat
+
+filter: grayscale(100%);
+
+Rasm rangini o`zgartirish 
+Rasmning rangini butunlay o`zgartirish hue-rotate funksiyasi orqali.
+
+filter: hue-rotate(gradus);
+
+Rang kodining o`rniga maksimal qiymatga nisbatan teskari tasvir fotokamera plyonkasidek ko`rinishi. Bu usul rangni ag`darish deyiladi. 
+invert funksiyasi
+
+filter: invert(foiz);
+
+Oq qoradan jigarrangsifat rang berish sepia funskiyasi orqali
+
+filter: sepia(foiz);
+
+>>>>>>>>>>>>Ort tasvir ranglari<<<<<<<<<<<
+
+css yordamida obyekt orqasiga rasm qo`yish - background-image orqali
+
+
+background-image: url();
+
+chiziqli tuslanish 
+
+background-image:linear-gradient(yo`nalish, rang1, rang2);
+
+
+yoysimon tuslanish
+background-image: radial-gradient(uslub at joy ranglari);
+
+to top - pastdan tepaga tik
+to left - o`ngdan chapga
+
+background-image: radial-gradient (circle farthest-corner at top left, cyan, aqua, blue);
+
+Takroriy tuslanish
+background-image: repeating-radial-gradient(circle at top left, cyan,aqua 10px, blue 80px);
+
+Hisoblangan qiymat
+foizlarda qiymat berish doim ham ishlayvermaydi. Shunda calc funksiyasi iwlatilinadi.
+
+width: calc(100% - 20px);
+height: calc(100% / 2);
+
+/* IMPORTLAR (tanlov asosida biriktirish)
+MEDIA TURLARI
+all-barcha qurilmalar
+aural-tovushli brauzerlar
+braile-brayl tizimi ko`rlar uchun
+handheld-kichik ekranli uyali qurilmalar
+print-chop etish qurilmalari
+projection-proyektorlar
+screen-monitor
+tv-televizorlar uchun*/
+
+@import "css manzili" mediaturlari;
+
+@import "/style/main.css" screen;
+    /*kompyuter uchun*/
+
+@import "style/smart.css" print, handheld;
+    /*printerlar yoki smartfonlar uchun*/
+
+/*Css qonunlari o`zini tanlash*/
+
+@media screen {
+    BODY {
+        color: darkblue;
+    }
+}
+
+@media print {
+    BODY {
+        color: black;
+    }
+}
+/*
+:last-of-type - tashqi teg sinfidagi barcha teglar ichidagi oxirgi elementga tatbiq etiladi.
+
+:focus - fokus qabul qilgan element holati,ya'ni <tab> tugmasini bosish yoki ko'rsatkichini 
+ichiga qo'yish orqali tanlangan element uchun tatbiq etiladi.
+
+:fullscreen - ushbu holat brauzer to'liq ekranga yoyilgan holda akslantiradi.
+
+:hover - "sichqoncha" ko'rsatkichi obyekt ustiga borgan,lekin hali bosilmagan holat.Shuni unutmaslik kerakki,ushbu holatning ta'siri ":active" bo'lganda ham yo'qolmaydi.
+Ya'ni obyekt sichqoncha bilan bosilar ekan,albatta,ko'rsatkich(kursor) uning ustida bo'ladi.
+ Shunday xususiyat mavjudki,u faqat ko'satkich obyektning ustiga kelganda akslantiriladi.Uni "hover"da berish shart emas,masalan: cursor. Qiymati aniqlangan tur bo'lib,quyidagilardan birini qabul qiladi:
+   url - ko'rsatkich rasmining manzili beriladi;
+   auto - ko'rinishini obyekt turiga qarab o'zi aniqlaydi;
+   none - ko'rsatkichini yashiradi;
+   default va context-menu,help,pointer,wait,progress,
+   cell,all-scroll,crosshair,text,alias,vertical-text,
+   not-allowed,no-drop,copy,move,col-rezise,row-rezise,
+   n-resize,ne-resize,grab,e-resize,se-resize,s-resize,
+   sw-resize,w-resize,nw-resize,nesw-resize,nwse-resize,
+   zoom-out,zoom-in,grabbing - operatsion tizimda aniqlangan mos rasmlarni akslantiradi. 
+:in-range - obyektga berilgan  qiymat uning "min"va "max"alomatlarida ko'rsatilgan oraliqda bo'lganda.
+:out-of-range - obyektga foydalanuvchi bergan quymat uning "min" va "max"alomatlarida ko'rsatilgan oraliqdan tasgqarida bo'lagan holatda.
+:indeterminate - belgilanuvchi darchaning noaniq holati, ya'ni  "checkbox"ning qiymati rost ham,  yolg'on
+ham emas.
+:invalid - kiritilgan qiymati darchaning turiga mos
+bo'lgan holat.Masalan,pochta  manzili o'rniga oddiy ishorat kiritilsa.
+:lang - tegning "lang" alomatida ko'rsatilgan til mos kelgan holat.
+*/
+
+q:lang(ru) {color: blueviolet;}
+q:lang(uz) {color:aquamarine;}
